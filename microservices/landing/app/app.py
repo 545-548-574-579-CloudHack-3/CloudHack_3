@@ -21,8 +21,8 @@ def divide(n1, n2):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    number_1 = request.form.get("first")
-    number_2 = request.form.get('second')
+    number_1 = float(request.form.get("first"))
+    number_2 = float(request.form.get('second'))
     operation = request.form.get('operation')
     result = 0
     if operation == 'add':
