@@ -35,7 +35,7 @@ def index():
         elif operation == 'divide':
             result = divide(number_1, number_2)
 
-    flash(f'The result of operation {operation} on {number_1} and {number_2} is {result}')
+        flash(f'The result of operation {operation} on {number_1} and {number_2} is {result}')
 
     return render_template('index.html')
 
