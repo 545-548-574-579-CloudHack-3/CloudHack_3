@@ -3,6 +3,7 @@ version: '3.3'  # version of compose format
 services:
   landing-service:
     build: ./landing  # path is relative to docker-compose.yml location
+    container_name: landing-service
     hostname: landing-service
     ports:
       - 5050:5050  # host:container
@@ -10,6 +11,46 @@ services:
       sample:
         aliases:
           - landing-service
+          
   # Add more services below
+  add-service:
+    build: ./Add  # path is relative to docker-compose.yml location
+    container_name: add-service
+    hostname: add-service
+    networks:
+      sample:
+        aliases:
+          - add-service
+
+   # Add more services below
+  sub-service:
+    build: ./Sub  # path is relative to docker-compose.yml location
+    container_name: sub-service
+    hostname: sub-service
+    networks:
+      sample:
+        aliases:
+          - sub-service
+
+  # Add more services below
+  mul-service:
+    build: ./Mul  # path is relative to docker-compose.yml location
+    container_name: mul-service
+    hostname: mul-service
+    networks:
+      sample:
+        aliases:
+          - mul-service
+
+  # Add more services below
+  div-service:
+    build: ./Div  # path is relative to docker-compose.yml location
+    container_name: div-service
+    hostname: div-service
+    networks:
+      sample:
+        aliases:
+          - div-service
+          
 networks:
   sample:
