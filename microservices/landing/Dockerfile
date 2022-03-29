@@ -8,3 +8,4 @@ RUN apk add --update \
 
 COPY ./app /app
 CMD [ "python", "app.py" ]
+

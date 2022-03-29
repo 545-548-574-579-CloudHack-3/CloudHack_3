@@ -51,6 +51,34 @@ services:
       sample:
         aliases:
           - div-service
+  
+  
+  equal-service:
+    build: ./Equal  # path is relative to docker-compose.yml location
+    container_name: equal-service
+    hostname: equal-service
+    networks:
+      sample:
+        aliases:
+          - equal-service
+    
+  modulus-service:
+    build: ./Modulus  # path is relative to docker-compose.yml location
+    container_name: modulus-service
+    hostname: modulus-service
+    networks:
+      sample:
+        aliases:
+          - modulus-service
+    
+  exponent-service:
+    build: ./Exponent  # path is relative to docker-compose.yml location
+    container_name: exponent-service
+    hostname: exponent-service
+    networks:
+      sample:
+        aliases:
+          - exponent-service
           
 networks:
   sample:
